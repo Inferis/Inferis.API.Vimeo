@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0A2D18A4-A438-4880-AE3B-A5895428A77A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Inferis.API.Vimeo</RootNamespace>
+    <AssemblyName>Inferis.API.Vimeo</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Advanced\ApiBase.cs" />
+    <Compile Include="Advanced\ApiBaseWithSecret.cs" />
+    <Compile Include="Advanced\Auth.cs" />
+    <Compile Include="Advanced\Callers\AnonymousCaller.cs" />
+    <Compile Include="Advanced\Callers\AuthenticatedCaller.cs" />
+    <Compile Include="Advanced\Callers\CallerImplBase.cs" />
+    <Compile Include="Advanced\Callers\ISignedCallerImpl.cs" />
+    <Compile Include="Advanced\Callers\ISignedCaller.cs" />
+    <Compile Include="Advanced\Callers\IAuthenticatedCaller.cs" />
+    <Compile Include="Advanced\Callers\IAnonymousCaller.cs" />
+    <Compile Include="Advanced\Callers\ICallerImpl.cs" />
+    <Compile Include="Advanced\Callers\SignedCaller.cs" />
+    <Compile Include="Advanced\Responses\Page.cs" />
+    <Compile Include="Advanced\Responses\VideoSummary.cs" />
+    <Compile Include="Advanced\Videos.cs" />
+    <Compile Include="Advanced\IApiSettings.cs" />
+    <Compile Include="Advanced\Methods.cs" />
+    <Compile Include="Advanced\Parameters.cs" />
+    <Compile Include="Advanced\Responses\TokenInfo.cs" />
+    <Compile Include="Advanced\Test.cs" />
+    <Compile Include="FailedVimeoCallException.cs" />
+    <Compile Include="INetwork.cs" />
+    <Compile Include="InvalidVimeoResponseException.cs" />
+    <Compile Include="Network.cs" />
+    <Compile Include="Permission.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sort.cs" />
+    <Compile Include="UriExtensions.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Inferis.Core\Inferis.Core.csproj">
+      <Project>{7DC6F24A-66DE-4F1C-898F-2895EE485B3F}</Project>
+      <Name>Inferis.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Simple\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
